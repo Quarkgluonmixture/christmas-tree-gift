@@ -9,6 +9,9 @@
 
 虽然只有几百行代码，但视觉效果拉满了（特别是在大屏幕上）。
 
+点击下面的链接可以直接访问：
+https://electronicminer.github.io/gesture-Christmas_tree-3d_with_photo/christmas_tree_touch&gesture.html
+
 <img width="2559" height="1439" alt="image" src="https://github.com/user-attachments/assets/45f3ec57-00b5-4989-b3b2-484772ad95cf" />
 
 
