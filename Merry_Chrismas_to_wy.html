@@ -12,8 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>送给狗狗的圣诞礼物</title>
     
-    <!-- 引入 FontAwesome 图标库 (让图标更美观) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- 引入 FontAwesome 图标库 (本地版本) -->
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
 
     <!-- 引入不蒜子脚本 -->
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -72,7 +72,7 @@
             text-shadow: 0 0 50px rgba(252, 238, 167, 0.6); 
             background: linear-gradient(to bottom, #fff, #eebb66);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            font-family: 'Cinzel', 'Times New Roman', serif;
+            font-family: 'Times New Roman', serif;
             opacity: 0.9; transition: opacity 0.5s ease;
             text-align: center; pointer-events: none;
         }
@@ -230,7 +230,7 @@
         }
 
         .stats-title {
-            font-family: 'Cinzel', serif;
+            font-family: 'Times New Roman', serif;
             color: rgba(212, 175, 55, 0.9);
             font-size: 10px;
             letter-spacing: 2px;
@@ -255,7 +255,7 @@
         }
 
         .stats-value {
-            font-family: 'Cinzel', serif; /* 使用高级衬线体 */
+            font-family: 'Times New Roman', serif;
             color: #fff;
             font-weight: bold;
             font-size: 14px;
@@ -263,16 +263,14 @@
         }
     </style>
     
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
-    </style>
+    <!-- Google Fonts 已移除，使用系统字体替代以支持国内访问 -->
 
     <script type="importmap">
         {
             "imports": {
-                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
-                "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/+esm"
+                "three": "./assets/js/three.module.js",
+                "three/addons/": "./assets/js/three/addons/",
+                "@mediapipe/tasks-vision": "./assets/js/tasks-vision.js"
             }
         }
     </script>
@@ -823,9 +821,9 @@
             debugInfo.innerText = "Loading AI models...";
             video = document.getElementById('webcam');
             try {
-                const vision = await FilesetResolver.forVisionTasks("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm");
+                const vision = await FilesetResolver.forVisionTasks("./assets/wasm");
                 handLandmarker = await HandLandmarker.createFromOptions(vision, {
-                    baseOptions: { modelAssetPath: `https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task`, delegate: "GPU" },
+                    baseOptions: { modelAssetPath: `./assets/models/hand_landmarker.task`, delegate: "GPU" },
                     runningMode: "VIDEO", numHands: 1
                 });
                 const constraints = { video: { facingMode: "user", width: { ideal: 640 }, height: { ideal: 480 } } };
