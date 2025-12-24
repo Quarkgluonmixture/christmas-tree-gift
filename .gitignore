@@ -3,8 +3,7 @@
 
 # But allow these specific files and folders
 !.gitignore
-!christmas_tree_touch_gesture.html
+!Merry_Chrismas_to_wy.html
 !index.html
 !images/
 !images/**
-!README.md
