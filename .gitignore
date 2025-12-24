@@ -5,5 +5,9 @@
 !.gitignore
 !Merry_Chrismas_to_wy.html
 !index.html
+!LICENSE
 !images/
 !images/**
+!assets/
+!assets/**
+!download_assets.py
